@@ -1,17 +1,23 @@
 {
-    "name": "meinprojekt",
+    "name": "marvin-wiki",
     "version": "1.0.0",
-    "description": "Eine Beispiel-App",
+    "description": "Ein Wiki-Projekt namens Marvin",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "live-server"
     },
-    "author": "Ihr Name",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/geilo667/marvin-wiki.git"
+    },
+    "author": "",
     "license": "ISC",
-    "dependencies": {
-      "express": "^4.17.1",
-      "socket.io": "^4.4.0"
+    "bugs": {
+      "url": "https://github.com/geilo667/marvin-wiki/issues"
+    },
+    "homepage": "https://geilo667.github.io/marvin-wiki",
+    "devDependencies": {
+      "live-server": "^1.2.1"
     }
   }
   
