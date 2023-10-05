@@ -1,65 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Textfelder bearbeiten</title>
-    <style>
-        #inputArea {
-            margin-bottom: 20px;
-        }
-        .editable {
-            margin-bottom: 10px;
-            border: 1px solid #8b8b8b;
-            padding: 5px;
-        }
-    </style>
+    <title>Mein Text Beispiel</title>
 </head>
-
 <body>
-    <div id="inputArea">
-        <button onclick="addTextField()">Textfeld hinzufügen</button>
-    </div>
-    <div id="editArea">
-        <!-- Hier werden die Textfelder eingefügt -->
-    </div>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-
-        function addTextField() {
-            const editArea = document.getElementById('editArea');
-            const newTextField = document.createElement('div');
-            newTextField.contentEditable = true;
-            newTextField.classList.add('editable');
-            newTextField.innerText = 'Text hier bearbeiten...';
-            newTextField.addEventListener('input', function() {
-                textChanged(this);
-            });
-            editArea.appendChild(newTextField);
-        }
-
-        function textChanged(textField) {
-            socket.emit('textChanged', textField.innerText);
-        }
-
-        socket.on('loadTexts', function(texts) {
-            const editArea = document.getElementById('editArea');
-            editArea.innerHTML = ''; // Bereinigen des aktuellen Inhalts
-            texts.forEach(text => {
-                const newTextField = document.createElement('div');
-                newTextField.contentEditable = true;
-                newTextField.classList.add('editable');
-                newTextField.innerText = text;
-                newTextField.addEventListener('input', function() {
-                    textChanged(this);
-                });
-                editArea.appendChild(newTextField);
-            });
-        });
-    </script>
+    "Marvin ist ein kleiner uns einsamer Junge"
 </body>
-
 </html>
