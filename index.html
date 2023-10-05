@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textfelder bearbeiten</title>
+    <style>
+        #inputArea {
+            margin-bottom: 20px;
+        }
+        .editable {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="inputArea">
+        <button onclick="addTextField()">Textfeld hinzufügen</button>
+    </div>
+    <div id="editArea">
+        <!-- Hier werden die Textfelder eingefügt -->
+    </div>
+
+    <script>
+        function addTextField() {
+            // Bereich, in den die Textfelder eingefügt werden
+            const editArea = document.getElementById('editArea');
+
+            // Erstellen eines neuen Textfeldes (div-Element mit Inhalt bearbeitbar)
+            const newTextField = document.createElement('div');
+            newTextField.contentEditable = true;
+            newTextField.classList.add('editable');
+            newTextField.innerText = 'Text hier bearbeiten...';
+
+            // Hinzufügen des neuen Textfeldes zum Bearbeitungsbereich
+            editArea.appendChild(newTextField);
+        }
+    </script>
+</body>
+
+</html>
