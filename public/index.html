@@ -1,0 +1,15 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // Ihr bisheriger Code...
+
+    var socket = io();
+
+    socket.on('loadTexts', function(texts) {
+        // Hier Texte aus dem Server in das Textfeld laden
+    });
+
+    // Beispiel-Event, wenn Text geändert wird
+    function textChanged(textField) {
+        socket.emit('textChanged', textField.innerText);
+    }
+</script>
